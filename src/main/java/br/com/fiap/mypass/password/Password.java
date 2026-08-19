@@ -1,5 +1,6 @@
 package br.com.fiap.mypass.password;
 
+import br.com.fiap.mypass.user.User;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -17,4 +18,8 @@ public class Password {
     private String password;
 
     private String username;
+
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
+    private User owner;
 }
